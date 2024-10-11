@@ -1,10 +1,14 @@
-document.getElementById("xyz_id").innerHTML = "SUPER TEXT SUPER AUTO SUPER LUFT"
+const objektWoerterListe = document.querySelector(".objekt_liste_html");
+let woerter_liste = ["w1","w2","w3","w4","w5","w6","w7","w8","w9"];
+
+objektWoerterListe.innerHTML = woerter_liste.join("<br>");
 
 
 
-function zeigeNachricht() {
-    alert("Hallo aus der externen JavaScript-Datei!");
-} 
-
+fetch("code_ende.txt")
+    .then(function(response){return response.text();})
+    .then(function(text){woerter_liste = text.split(" \n");
+                         console.log(woerter_liste);
+    });
 
 
