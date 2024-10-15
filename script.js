@@ -7,7 +7,7 @@ objektWoerterListe.innerHTML = woerter_liste.join("<br>");
 
 fetch("code_ende.txt")
     .then(function(response){return response.text();})
-    .then(function(text){woerter_liste = text.split(" \n");
+    .then(function(text){woerter_liste = text.split(",");
                          console.log(woerter_liste);
     });
 
