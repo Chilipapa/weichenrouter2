@@ -1,6 +1,6 @@
 async function main() {
+    
     const gesCodeObj = document.querySelector(".derGanzeCode");
-  
     const layoutCode = await liefereCode("layout.txt");
   
     const code1 = await liefereCode("code1.txt");
@@ -9,9 +9,7 @@ async function main() {
       "//####XX_short_arrays_XX",
       "//####XX_case_zeilen_XX"
     );
-    //const code22 = await liefereCode4(layoutCode);
     const code3 = await liefereCode("code3.txt");
-    //const code41 = await liefereCode4(layoutCode);
     const code4 = await liefereCodeAbschnittAusLayout(
       layoutCode,
       "//####XX_case_zeilen_XX",
@@ -28,6 +26,8 @@ async function main() {
   
     gesCodeObj.innerHTML = codeGesamtAlsString;
   
+
+    ///// hier beginnt der Funktionen-Teil
     async function liefereCodeAbschnittAusLayout(
       layoutCodeArray,
       startString,
@@ -47,18 +47,11 @@ async function main() {
           rueckgabeArray.push(zeile);
         }
       });
-  
       // Rückgabe des Arrays nach Abschluss der forEach-Schleife
-      return rueckgabeArray.shift(); // erstes Element entfernen
+      return rueckgabeArray; // erstes Element entfernen
     }
   
-    async function liefereCode4(layoutCode) {
-      //####XX_short_arrays_XX
-      //####XX_case_zeilen_XX
-      //####XX_ENDE_XX
-      const gewuenschterCodeTeil = [layoutCode[7]];
-      return [gewuenschterCodeTeil];
-    }
+
   
     async function liefereCode(textDatei) {
       try {
