@@ -3,21 +3,21 @@ async function main() {
   
     const layoutCode = await liefereCode("layout.txt");
   
-    const code1 = await liefereCode("wr_01_code_kopf.txt");
+    const code1 = await liefereCode("code1.txt");
     const code2 = await liefereCodeAbschnittAusLayout(
       layoutCode,
       "//####XX_short_arrays_XX",
       "//####XX_case_zeilen_XX"
     );
     //const code22 = await liefereCode4(layoutCode);
-    const code3 = await liefereCode("wr_02_code_setup_loop.txt");
+    const code3 = await liefereCode("code3.txt");
     //const code41 = await liefereCode4(layoutCode);
     const code4 = await liefereCodeAbschnittAusLayout(
       layoutCode,
       "//####XX_case_zeilen_XX",
       "//####XX_ENDE_XX"
     );
-    const code5 = await liefereCode("wr_03_code_ende.txt");
+    const code5 = await liefereCode("code5.txt");
   
     const codeGesamt = code1
       .concat(code2)
