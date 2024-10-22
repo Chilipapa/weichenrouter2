@@ -6,9 +6,6 @@
 
 
 void Weichestellen(uint8_t Adr_High, uint8_t Adr_Low, uint8_t Pos) {
-    // seltsam, 0 ist abbiegen und 1 ist gerade aus
-    // das drehe ich hier wieder richtig 0 ist geradeaus, 1 ist abbiegen
-    //Pos = (Pos == 0) ? 1 : 0; // terärer Operator
     // das erste mal den Weichenschaltbefehl erzeugen
     XpressNet.setTrntPos(Adr_High, Adr_Low, Pos + 8); //ein
     delay(100);// warten bis wieder aus gestellt wird

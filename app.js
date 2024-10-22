@@ -1,23 +1,24 @@
 async function main() {
     
     const gesCodeObj = document.querySelector(".derGanzeCode");
+    gesCodeObj.innerHTML = "Code noch nicht erstellt";
     const layoutCode = await liefereCode("layout.txt");
   
-    const code1 = await liefereCode("code1.txt");
-    const code2 = await liefereCodeAbschnittAusLayout(
+    let code1 = await liefereCode("code1.txt");
+    let code2 = await liefereCodeAbschnittAusLayout(
       layoutCode,
       "//####XX_short_arrays_XX",
       "//####XX_case_zeilen_XX"
     );
-    const code3 = await liefereCode("code3.txt");
-    const code4 = await liefereCodeAbschnittAusLayout(
+    let code3 = await liefereCode("code3.txt");
+    let code4 = await liefereCodeAbschnittAusLayout(
       layoutCode,
       "//####XX_case_zeilen_XX",
       "//####XX_ENDE_XX"
     );
-    const code5 = await liefereCode("code5.txt");
+    let code5 = await liefereCode("code5.txt");
   
-    const codeGesamt = code1
+    let codeGesamt = code1
       .concat(code2)
       .concat(code3)
       .concat(code4)
